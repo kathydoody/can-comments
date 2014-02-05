@@ -16,4 +16,18 @@ describe("A Comments Component", function(){
 
     });
 
+    it("should add new comments to the list", function(){
+
+        var newTitle = F('#inputTitle');
+        newTitle.type('Super Comment');
+        var newComment = F('#textComment');
+        newComment.type('This is a very, very long comment about very interesting things')
+
+        F('#addBtn').click();
+
+        var allListElements = F("#comments").find('li').length;  // need to select from the test runner's iFrame
+        expect(allListElements).toBe(4);
+
+    })
+
 });
