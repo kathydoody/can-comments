@@ -51,19 +51,11 @@ can.Component.extend({
     tag: "comments",
 
     scope:{
-        comments: new Comment.List({}),  // this calls findAll on the Comment Model and returns the list
-
-   /*     activeComments: function(){
-
-            return this.comments;
-
-        }*/
-
+        comments: new Comment.List({})  // this calls findAll on the Comment Model and returns the list
     }
 
 });
 
-//can.route(":filter");  // makes a pretty url
 can.route.ready();
 
 var frag = can.view("comments/template/comments.hbs", {});
