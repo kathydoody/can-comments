@@ -6,7 +6,6 @@
     <title>Jasmine Runner for Unit Tests</title>
 </head>
 <body>
-    <iframe id='todos' src="app.html" name="todo"></iframe>
     <script src="lib/jquery/jquery.js"></script>
     <script src="lib/jasmine/jasmine.js"></script>
     <script src="lib/jasmine/jasmine-html.js"></script>
@@ -19,15 +18,19 @@
     <!-- get jasmine up and running -->
     <script type="text/javascript">
         var jasmineEnv = jasmine.getEnv();
+        jasmineEnv.updateInterval = 1000;
 
         var htmlReporter = new jasmine.HtmlReporter();
+
         jasmineEnv.addReporter(htmlReporter);
 
         jasmineEnv.specFilter = function(spec) {
             return htmlReporter.specFilter(spec);
         };
 
-        jasmineEnv.execute();
+        if(!/init/.test(window.location.search)) {
+            jasmineEnv.execute();
+        }
     </script>
 </body>
 </html>
