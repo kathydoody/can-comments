@@ -1,12 +1,11 @@
 <comments>
-
-    <div class="container">
+    <div class="center-block col-md-6 col-lg-6 col-sm-6">
 
         <div class="text-center">
             <h3 class="">BDD Comments Demo</h3>
         </div>
 
-        <form class="form-horizontal " role="form">
+        <form class="form-horizontal" onsubmit="return false;" >
             <div class="form-group">
                 <label for="inputTitle" class="col-sm-2 control-label">Title</label>
 
@@ -24,7 +23,7 @@
 
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" id="addBtn" class="btn btn-success">Add Comment</button>
+                    <button  id="addBtn" class="btn btn-success" >Add Comment</button>
                 </div>
             </div>
         </form>
@@ -33,5 +32,4 @@
         <comment-list comments="comments"></comment-list>
 
     </div>
-
 </comments>
